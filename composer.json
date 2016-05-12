@@ -3,10 +3,10 @@
     "description": "WebModularity Yii 2 Standard Project Template",
     "homepage": "https://www.webmodularity.com/",
     "type": "project",
+    "minimum-stability": "dev",
     "repositories": [
         {"type": "composer", "url": "https://toran.webmodularity.com/repo/private/"}
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.8",
