@@ -13,18 +13,17 @@ return [
     'controllerMap' => [
         'dashboard' => 'backend\controllers\DashboardController'
     ],
-    'components' => [
-        'adminSettings' => [
-            'user' => [
-                'register' => [
-                    //'webRegistration' => false,
-                    //'newUserStatus' => \wmc\models\user\User::STATUS_ACTIVE
-                ]
-            ],
-            'template' => [
-                'skin' => 'blue'
+    'adminSettings' => [
+        'user' => [
+            'register' => [
+                //'webRegistration' => false,
+                //'newUserStatus' => \wmc\models\user\User::STATUS_ACTIVE
             ]
         ],
+        'template' => [
+            'skin' => 'blue'
+        ]
     ],
+    'components' => [],
     'params' => $params,
 ];
