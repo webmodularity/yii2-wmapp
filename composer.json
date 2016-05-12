@@ -4,6 +4,7 @@
     "homepage": "https://www.webmodularity.com/",
     "type": "project",
     "minimum-stability": "dev",
+    "preferred-install": "dev",
     "repositories": [
         {"type": "composer", "url": "https://toran.webmodularity.com/repo/private/"}
     ],
