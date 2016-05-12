@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.8",
+        "yiisoft/yii2": ">=2.0.6",
         "webmod/yii2-wmfrontend": "dev-master",
         "webmod/yii2-wmadmin": "dev-master"
     },
