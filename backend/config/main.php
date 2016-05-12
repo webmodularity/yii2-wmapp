@@ -10,33 +10,21 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [],
+    'controllerMap' => [
+        'dashboard' => 'backend\controllers\DashboardController'
+    ],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-        ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
+        'adminSettings' => [
+            'user' => [
+                'register' => [
+                    //'webRegistration' => false,
+                    //'newUserStatus' => \wmc\models\user\User::STATUS_ACTIVE
+                ]
             ],
+            'template' => [
+                'skin' => 'blue'
+            ]
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
     ],
     'params' => $params,
 ];

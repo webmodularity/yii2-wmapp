@@ -13,29 +13,36 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+            'identityClass' => 'wmc\models\user\User',
+            'loginUrl' => ['/user/login'],
+            'enableAutoLogin' => true,ue,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => 'yii\log\DbTarget',
                     'levels' => ['error', 'warning'],
-                ],
+                    'logTable' => 'log_frontend'
+                ]
             ],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'file/<filename>' => 'site/file',
+                'file/<pathAlias:[a-zA-Z0-9\-\_]+>/<filename>' => 'site/file',
+                'page/<name:.+>' => 'site/page',
             ],
         ],
-        */
+        'authManager' => [
+            'class' => 'wmc\rbac\DbManager',
+            'defaultRoles' => ['su', 'admin', 'author', 'user', 'guest'],
+        ]
     ],
     'params' => $params,
 ];
